@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Service Laptop')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> <!-- Add Bootstrap CSS link -->
+    @vite('resources/css/app.css')
 </head>
 <!-- <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
