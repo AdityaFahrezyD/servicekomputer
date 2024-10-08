@@ -18,10 +18,11 @@ return new class extends Migration
         $table->string('hp', 15);
         $table->string('username', 100);
         $table->string('password', 255);
-        $table->enum('status', ['dalam pengerjaan', 'kosong']);
-        $table->string('job_desk', 30);
+        $table->enum('status', ['dalam pengerjaan', 'kosong'])->nullable(); // Make status nullable
+        $table->string('job_desk', 30)->nullable(); // Make job desk nullable
         $table->timestamps();
     });
+    
 }
 
 public function down()

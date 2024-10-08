@@ -23,7 +23,7 @@
                             <a href="#">Cek Status Service</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="#">Riwayat Pemesanan</a>
+                            <a href="{{ route('pesanan.customer.index') }}">Riwayat Pemesanan</a>
                         </li>
                         <li class="list-group-item">
                             <a href="#">Edit Profil</a>

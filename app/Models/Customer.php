@@ -14,13 +14,7 @@ class Customer extends Authenticatable
     protected $table = 'customers';
 
     // Primary Key
-    protected $primaryKey = 'email';
-
-    // Disabling incrementing for non-integer primary key
-    public $incrementing = false;
-
-    // Specify the type of primary key
-    protected $keyType = 'string';
+    protected $primaryKey = 'id';
 
     // Kolom yang bisa diisi secara mass-assignment
     protected $fillable = [
@@ -41,7 +35,7 @@ class Customer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    
     // Jika menggunakan hashing password, kita perlu mengatur mutator untuk password
     // public function setPasswordAttribute($password)
     // {

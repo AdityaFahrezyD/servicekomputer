@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class MsService extends Model
 {
     use HasFactory;
+
+    protected $table = 'ms_services';
+
+    protected $fillable = [
+        'nama_service',
+        'harga',
+    ];
 }

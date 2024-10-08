@@ -12,10 +12,10 @@ return new class extends Migration
     public function up()
 {
     Schema::create('tr_pesanans', function (Blueprint $table) {
-        $table->id();
-        $table->string('email_customer', 100);
-        $table->foreign('email_customer')->references('email')->on('customers')->onDelete('cascade');
-        $table->unsignedBigInteger('id_teknisi');
+        $table->id(); // Primary key for tr_pesanans table
+        $table->unsignedBigInteger('customer_id'); // Foreign key for customers table
+        $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+        $table->unsignedBigInteger('id_teknisi')->nullable(); // Foreign key for teknisis table
         $table->foreign('id_teknisi')->references('id')->on('teknisis')->onDelete('cascade');
         $table->dateTime('tanggal_pesanan');
         $table->integer('estimasi_biaya')->nullable();
