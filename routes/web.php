@@ -13,7 +13,7 @@ use App\Http\Controllers\Auth\TeknisiAuthController;
 use App\Http\Controllers\Auth\CustomerAuthController;
 
 // Route untuk Home, about, service
-Route::get('/', [LandingPageController::class, 'index'])->name('home');
+Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 Route::get('/about', function () {
     return view('about');
 });
