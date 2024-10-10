@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fath Comp</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @include('components.navbar')
+    <x-navbar></x-navbar>
     <div class="font-montserrat px-5 md:px-5 lg:px-15">
         <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
     </div>
-    @include('components.footer')
+    <x-footer></x-footer>
 
     <script>
         function truncateText(maxWords) {
@@ -33,6 +34,6 @@
         }
       
         truncateText(20);  // Batas maksimal 20 kata
-      </script>
+    </script>
 </body>
 </html>

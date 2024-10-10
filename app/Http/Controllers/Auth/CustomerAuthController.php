@@ -36,7 +36,7 @@ class CustomerAuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('customer.login')->with('success', 'Registrasi berhasil, silahkan login.');
+        return redirect()->route('landing')->with('success', 'Registrasi berhasil');
     }
 
 
@@ -58,7 +58,7 @@ class CustomerAuthController extends Controller
     // Verifikasi login dengan guard customer
     if (Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])) {
         // Login berhasil
-        return redirect()->route('customer.dashboard');
+        return redirect()->route('landing');
     } else {
         // Login gagal
         return back()->withErrors(['email' => 'Email atau password salah.']);
@@ -70,7 +70,7 @@ class CustomerAuthController extends Controller
     public function logout()
     {
         Auth::guard('customer')->logout();
-        return redirect()->route('customer.login');
+        return redirect()->route('landing');
     }
 }
 
